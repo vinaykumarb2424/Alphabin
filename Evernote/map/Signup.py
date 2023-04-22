@@ -1,0 +1,5 @@
+email = "email"
+password = "passwordInput"
+register = "register"
+signup_btn = "//a[text()='Sign up for free']"
+free_account_btn = "//div[@class='cta bottom']/a[contains(text(),'Get Started')]"
