@@ -17,6 +17,7 @@ from log import log_files
 
 logger = log_files("Signup")
 
+
 class Signup(object):
     ROBOT_LIBRARY_SCOPE = 'TEST SUITE'
 

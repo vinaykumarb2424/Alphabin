@@ -13,7 +13,7 @@ class WebDriver:
     def __init__(self):
         options = webdriver.ChromeOptions()
         options.add_argument("--disable-notifications")
-        self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
+        self.driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()), options=options)
         self.driver.get("https://evernote.com/")
         self.driver.maximize_window()
 
@@ -35,15 +35,63 @@ class WebDriver:
         )
         return element
 
+    def get_elements_by_xpath(self, xpath, timeout=30):
+        """
+        this method takes id as parameter and return web element
+        """
+        element = WebDriverWait(self.driver, timeout).until(
+            EC.presence_of_all_elements_located((By.XPATH, xpath))
+        )
+        return element
+
+    def get_element_by_tag(self,  tag, timeout=30):
+        element = WebDriverWait(self.driver, timeout).until(
+            EC.presence_of_element_located((By.TAG_NAME, tag))
+        )
+        return element
+
+    def get_elements_by_tag(self,  tag, timeout=30):
+        element = WebDriverWait(self.driver, timeout).until(
+            EC.presence_of_all_elements_located((By.TAG_NAME, tag))
+        )
+        return element
+
     def get_element_by_presence(self, xpath, timeout=30):
         element = WebDriverWait(self.driver, timeout).until(
             EC.presence_of_element_located((By.XPATH, xpath))
         )
         return element
 
+    def get_element_by_visible(self, xpath, timeout=30):
+        element = WebDriverWait(self.driver, timeout).until(
+            EC.visibility_of_element_located((By.XPATH, xpath))
+        )
+        return element
+
+    def get_elements_by_visible(self, xpath, timeout=30):
+        element = WebDriverWait(self.driver, timeout).until(
+            EC.visibility_of_all_elements_located((By.XPATH, xpath))
+        )
+        return element
+
+    def get_elements_by_presence(self, xpath, timeout=30):
+        element = WebDriverWait(self.driver, timeout).until(
+         EC.presence_of_element_located((By.XPATH, xpath))
+        )
+        return element
+
     def scroll_by_pixel(self):
         scroll = self.driver.execute_script("window.scrollBy(0, 500)", "")
         return scroll
+
+    def switch_frame(self, id_, timeout=60):
+        element = WebDriverWait(self.driver, timeout).until(
+            EC.frame_to_be_available_and_switch_to_it((By.ID, id_))
+        )
+        return element
+
+    def switch_out_frame(self):
+        self.driver.switch_to.default_content()
 
     def get_page_title(self, title, timeout=30):
         """
@@ -58,7 +106,5 @@ class WebDriver:
         print(directory)
         self.driver.save_screenshot("%s/%s" % (directory, filename + ".png"))
 
-#w = WebDriver()
-#w.capture_screenshot("vinray")
 
 

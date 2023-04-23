@@ -33,12 +33,12 @@ I do verify_logged_user
     Call Method    ${Client.home}       verify_logged_user  ${email}
 
 I do create Task
-    [Arguments]    ${Client}    ${task}
+    [Arguments]    ${Client}    ${task}     ${dummy_text}
     Call Method    ${Client.task}       click_task
     Call Method    ${Client.task}       create_task     ${task}
     #Call Method    ${Client.task}       open_created_task
     Call Method    ${Client.task}       click_notes_tab  #open_notes
     Call Method    ${Client.task}       open_insert
-    Call Method    ${Client.task}       add_table
+    Call Method    ${Client.task}       add_table       ${dummy_text}
 
 
