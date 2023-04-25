@@ -11,7 +11,7 @@ I do register account
     Call Method    ${Client.signup}    click_continue
     Call Method    ${Client.signup}    verify_signup
     #[Return]    ${result}
-I do verify account
+I do setup account
     [Arguments]    ${Client}      ${email}
     Call Method    ${Client.home}    make_setup
     #Call Method    ${Client.home}    click_get_started
