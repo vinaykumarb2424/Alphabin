@@ -5,7 +5,7 @@ Suite Setup     Create Instance
 
 
 *** Variables ***
-${signup}     venus6swamytemswer@gmail.com
+${signup}     #venus6swamytemswer@gmail.com
 ${password}     Evernote@1
 *** Keywords ***
 Create Instance
