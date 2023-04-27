@@ -6,8 +6,6 @@ from map import Task as map
 from log import log_files
 from selenium.webdriver import ActionChains, Keys
 from selenium.webdriver.common.by import By
-#import autoit
-import ait
 logger = log_files("Task")
 
 class Task:

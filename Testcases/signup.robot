@@ -6,7 +6,7 @@ Suite Setup     Create Instance
 
 *** Variables ***
 ${signup}     #venus6swamytemswer@gmail.com
-${password}     Evernote@1
+${password}     #Evernote@1
 *** Keywords ***
 Create Instance
     ${Client}=  Get Library Instance      client1
