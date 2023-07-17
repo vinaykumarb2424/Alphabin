@@ -1,2 +1,3 @@
 FROM alpine:latest
-RUN apt-get update && apt install python
+RUN apk update
+RUN apk add python
