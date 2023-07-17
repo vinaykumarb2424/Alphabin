@@ -9,7 +9,7 @@ COPY    ./Testcases  /Automation/Testcases
 COPY    ./common_functionality.py  /Automation/common_functionality
 COPY    ./log.py  /Automation/log.py
 COPY    ./requirements.txt  /Automation/requirements.txt
-RUN apk add --no-cache --virtual .build-deps \
+RUN apk add --no-cache  \
     build-base \
     libffi-dev \
     openssl-dev \
