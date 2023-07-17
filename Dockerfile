@@ -1,2 +1,2 @@
 FROM alpine:latest
-RUN yum install python
+RUN apt-get update && apt install python
