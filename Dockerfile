@@ -1,3 +1,2 @@
 FROM alpine:latest
-RUN apk update
-RUN apk add python
+RUN apk update && apk add python3
