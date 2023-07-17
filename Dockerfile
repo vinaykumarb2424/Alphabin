@@ -9,14 +9,8 @@ COPY    ./Testcases  /Automation/Testcases
 COPY    ./common_functionality.py  /Automation/common_functionality
 COPY    ./log.py  /Automation/log.py
 COPY    ./requirements.txt  /Automation/requirements.txt
-RUN apk add --no-cache  \
-    build-base \
-    libffi-dev \
-    openssl-dev \
-    libxml2-dev \
-    libxslt-dev \
-    && pip install --no-cache-dir -r requirements.txt \
-    && apk del .build-deps
+WORKDIR     /Automation/
+RUN  pip install --no-cache-dir -r requirements.txt
 WORKDIR     /Automation/Testcases
 
 
