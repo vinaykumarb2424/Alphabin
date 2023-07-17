@@ -5,7 +5,7 @@ Documentation     Keywords supported for evernote Application to test testcases
 *** Keywords ***
 I do register account
     [Arguments]    ${Client}      ${email}     ${password}
-    Call Method    ${Client.signup}        click_signup_for_free
+    Call Method    ${Client.signup}     click_signup_for_free
     Call Method    ${Client.signup}    click_free_account
     Call Method    ${Client.signup}    fill_details   ${email}     ${password}
     Call Method    ${Client.signup}    click_continue

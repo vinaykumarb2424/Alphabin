@@ -15,7 +15,7 @@ Create Instance
     Set Suite Variable      ${Client}
 *** Test Cases ***
 I do signin with registred account and verify
-   I do signin with registred account      ${Client}       ${signin}      ${password}
+    I do signin with registred account      ${Client}       ${signin}      ${password}
     I do verify_logged_user      ${Client}      ${signin}
 
 I do create Task and verify
