@@ -71,7 +71,7 @@ class Signup(object):
             register.click()
             logger.info('register clicked')
             time.sleep(20)
-            print("hello")
+
         except Exception as ex:
             logger.error('click_continue failed')
             self.driver.capture_screenshot("click_continue")
