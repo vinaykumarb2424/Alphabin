@@ -26,7 +26,7 @@ def log_files(name):
 
 
 #print(okok())
-#print(log_files("vinayy")
+#print(log_files("vinay")
 #system()
 
 
