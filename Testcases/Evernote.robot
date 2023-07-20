@@ -5,7 +5,7 @@ Suite Setup     Create Instance
 
 
 *** Variables ***
-${signin}   opengfhwe1gggopen@gmail.com
+${signin}   opengfhrerrwe1gggopen@gmail.com
 ${password}     Evernote@1
 ${task}         assignment
 ${dummy_text}   dummy_text
